@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
@@ -9,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { name: "Home", href: "/" },
   { name: "Rooms & Suites", href: "/rooms" },
   { name: "Facilities", href: "/facilities" },
   { name: "Restaurant", href: "/restaurant" },
@@ -56,9 +56,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className={`font-heading text-2xl md:text-3xl font-bold tracking-tight transition-colors duration-300 ${logoColor}`}>
-            Mega Anggrek
-          </span>
+          <div className="relative w-48 h-12">
+            <Image 
+              src="/images/logo.png" 
+              alt="Mega Anggrek Logo" 
+              fill 
+              className="object-contain" 
+              priority
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -37,9 +38,14 @@ export function Footer() {
           {/* Brand Info */}
           <div className="space-y-6">
             <Link href="/" className="inline-block">
-              <span className="font-heading text-2xl md:text-3xl font-bold tracking-tight text-secondary">
-                Mega Anggrek
-              </span>
+              <div className="relative w-48 h-12">
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Mega Anggrek Logo" 
+                  fill 
+                  className="object-contain" 
+                />
+              </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-sm">
               Experience timeless luxury in the heart of Jakarta. Discover elegant rooms, exceptional hospitality, and unforgettable moments that will last a lifetime.
